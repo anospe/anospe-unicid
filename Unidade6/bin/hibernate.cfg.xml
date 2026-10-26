@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuração de Conexão com o MySQL -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/dbstudent?useTimezone=true&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+
+        <!-- Dialeto do Hibernate para o MySQL 8 -->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Visualização do SQL gerado na consola -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Gestão automática do esquema da base de dados -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Mapeamento da Entidade -->
+        <mapping class="com.unidade6.modelo.Estudante"/>
+    </session-factory>
+</hibernate-configuration>
